@@ -2,7 +2,7 @@
 var ejs = require('ejs');
 
 var template = fs.readFileSync('ReadmeEJS.html', 'utf8')
-console.log(template)
+
 for (var i = 1; i < 12; i++) {
     (function (i) {
         fs.readdir('chapter_' + i, function (error, result) {
