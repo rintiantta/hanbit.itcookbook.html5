@@ -10,10 +10,11 @@ for (var i = 1; i < 12; i++) {
             if (error) {
                 console.log('There is no Directory');
             } else {
-                if (i > 8) {
+                if (i == 8) {
                     var texts = {};
                     for (var j = 0; j < result.length; j++) {
-                        texts[result[j]] = fs.readFileSync('chapter_' + i + '/' + result[j], 'utf8');
+                        console.log('read file:',result[j]);
+                        texts[result[j]] = fs.readFileSync('chapter_8/' + result[j], 'utf8');
                     }
 
                     fs.writeFile('Chapter ' + i + '.html', ejs.render(jsTemplate, {
@@ -22,10 +23,13 @@ for (var i = 1; i < 12; i++) {
                         texts: texts
                     }));
                 } else {
+                    /*
+                    console.log('Chapter ' + i + '.html');
                     fs.writeFile('Chapter ' + i + '.html', ejs.render(template, {
                         title: 'Chapter_' + i,
                         files: result
                     }));
+                    */
                 }
             }
         });

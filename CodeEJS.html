@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="./public/codemirror.css" />
+    <link rel="stylesheet" href="./public/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .example { margin-top: 10px; }
+        .title { float: left; }
+        .fullscreen { float: right; }
+        
+        textarea {
+            width: 100%;
+            display: block;
+            height: 250px;
+            background: white;
+        }
+        .CodeMirror {
+            font-size: 16px;
+        }
+        .cm-invalidchar {
+            display: none;
+        }
+        iframe {
+            display: block;
+            width: 760px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="./public/codemirror.js"></script>
+    <script src="./public/htmlmixed.js"></script>
+    <script src="./public/javascript.js"></script>
+    <script src="./public/css.js"></script>
+    <script src="./public/xml.js"></script>
+</head>
+<body>
+    <h1><%= title %> Example</h1>
+    <ul>
+        <% files.forEach(function (item, index) { if(item.indexOf('html') != -1) { %>
+        <li><a href="#<%= item %>"><%= item %></a></li>
+        <% }}); %>
+    </ul>
+    <hr />
+    <% files.forEach(function (item, index) { if(item.indexOf('html') != -1) { %>
+    <% if(texts[item].indexOf('onclick') == -1 && texts[item].indexOf('alert') != -1) { %>
+    <div id="<%= item %>" class="example well">
+        <h2 class="title"><%= item %></h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./<%= title %>/<%= item %>">Run</a></h4>
+        <div>
+            <textarea id="<%= item.split('.html')[0] %>"><%= texts[item] %></textarea>
+        </div>
+        <script>
+            var id = "<%= item.split('.html')[0] %>";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    <% } else { %>
+    <div id="<%= item %>" class="example well">
+        <h2 class="title"><%= item %></h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./<%= title %>/<%= item %>">Full Screen</a></h4>
+        <div>
+            <textarea id="<%= item.split('.html')[0] %>"><%= texts[item] %></textarea>
+        </div>
+        <script>
+            var id = "<%= item.split('.html')[0] %>";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./<%= title %>/<%= item %>"></iframe>
+    </div>
+    <% } %>
+    <% }}); %>
+</body>
+</html>
