@@ -189,7 +189,7 @@
     <style>
         /* 미디어 쿼리를 지원하지 않는 웹 브라우저 */
         #main-section {
-            width: 930px;
+            width: 920px;
             margin: 0 auto;
         }
 
@@ -199,7 +199,7 @@
         } 
 
         /* 4줄 */
-        @media (min-width: 930px) and (max-width:1149px) {
+        @media (min-width: 920px) and (max-width:1149px) {
             #main-section { width: 920px; }
         } 
 
@@ -247,21 +247,16 @@
     <script src="jquery.masonry.min.js"></script>
     <script src="jquery.imagesloaded.min.js"></script>
     <script>
-        function showLightBox() {
-            // 라이트박스를 보이게 합니다.
-            $('#darken-background').show();
-            $('#darken-background').css('top', $(window).scrollTop());
-            // 스크롤을 못하게 합니다.
-            $('body').css('overflow', 'hidden');
-        }
-        function hideLightBox() {
-            // 라이트박스를 안 보이게 합니다.
-            $('#darken-background').hide();
+        // 풀다운 메뉴
+        $(document).ready(function () {
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+        });
 
-            // 스크롤을 하게 합니다.
-            $('body').css('overflow', '');
-        }
-
+        // 페이지
         $(document).ready(function () {
             // 이미지 로드 확인
             $('#main-section').imagesLoaded(function () {
@@ -277,6 +272,25 @@
             $('.paper').click(function () {
                 showLightBox();
             });
+        });
+
+        // 라이트 박스
+        $(document).ready(function () {
+            function showLightBox() {
+                // 라이트박스를 보이게 합니다.
+                $('#darken-background').show();
+                $('#darken-background').css('top', $(window).scrollTop());
+                // 스크롤을 못하게 합니다.
+                $('body').css('overflow', 'hidden');
+            }
+
+            function hideLightBox() {
+                // 라이트박스를 안 보이게 합니다.
+                $('#darken-background').hide();
+
+                // 스크롤을 하게 합니다.
+                $('body').css('overflow', '');
+            }
 
             // 라이트박스 제거 이벤트
             $('#darken-background').click(function () {
@@ -286,13 +300,6 @@
             // 라이트박스 제거 이벤트 보조
             $('#lightbox').click(function (event) {
                 event.stopPropagation()
-            });
-
-            // 드롭다운 메뉴
-            $('.outer-menu').hover(function () {
-                $(this).find('.inner-menu').css('display', 'block');
-            }, function () {
-                $(this).find('.inner-menu').css('display', 'none');
             });
         });
     </script>
