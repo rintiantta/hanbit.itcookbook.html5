@@ -268,10 +268,7 @@
                 });
             });
 
-            // 클릭 이벤트 연결
-            $('.paper').click(function () {
-                showLightBox();
-            });
+            
         });
 
         // 라이트 박스
@@ -291,6 +288,11 @@
                 // 스크롤을 하게 합니다.
                 $('body').css('overflow', '');
             }
+
+            // 클릭 이벤트 연결
+            $('.paper').click(function () {
+                showLightBox();
+            });
 
             // 라이트박스 제거 이벤트
             $('#darken-background').click(function () {
