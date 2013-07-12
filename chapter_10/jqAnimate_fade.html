@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('button').click(function () {
+                // 간단한 효과를 적용합니다.
+                $('.page').fadeToggle('slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor non quam hendrerit adipiscing. Sed tempor, ligula pellentesque sollicitudin iaculis, ligula justo commodo augue, nec pellentesque leo neque non enim. Morbi sodales cursus lacus, tempus ornare enim elementum at. Suspendisse sit amet venenatis metus. Donec bibendum nisl nisl, non sollicitudin lorem blandit vel. Curabitur eu nibh quis massa porttitor tempus. Vestibulum condimentum purus dolor, non aliquam nibh pharetra tincidunt. Nunc eu pharetra odio, eget dictum dolor. Vestibulum sapien ipsum, pharetra nec eleifend nec, consectetur ac lorem.</p>
+    </div>
+</body>
+</html>

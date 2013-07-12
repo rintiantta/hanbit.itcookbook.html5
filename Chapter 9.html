@@ -1,95 +1,95 @@
-﻿<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Chapter_9</title> 
-    <link rel="stylesheet" href="./public/codemirror.css" /> 
-    <link rel="stylesheet" href="./public/bootstrap.min.css" /> 
-    <style> 
-        body { 
-            margin: 0 auto; 
-            width: 800px; 
-        } 
-        .example { margin-top: 10px; } 
-        .title { float: left; } 
-        .fullscreen { float: right; } 
-         
-        textarea { 
-            width: 100%; 
-            display: block; 
-            height: 250px; 
-            background: white; 
-        } 
-        .CodeMirror { 
-            font-size: 16px; 
-        } 
-        .cm-invalidchar { 
-            display: none; 
-        } 
-        iframe { 
-            display: block; 
-            width: 760px; 
-            height: 200px; 
-            margin-top: 10px; 
-        } 
-    </style> 
-    <script src="./public/codemirror.js"></script> 
-    <script src="./public/htmlmixed.js"></script> 
-    <script src="./public/javascript.js"></script> 
-    <script src="./public/css.js"></script> 
-    <script src="./public/xml.js"></script> 
-</head> 
-<body> 
-    <h1>Chapter_9 Example</h1> 
-    <ul> 
-         
-        <li><a href="#control_attribute.html">control_attribute.html</a></li> 
-         
-        <li><a href="#control_body.html">control_body.html</a></li> 
-         
-        <li><a href="#control_html.html">control_html.html</a></li> 
-         
-        <li><a href="#control_style.html">control_style.html</a></li> 
-         
-        <li><a href="#control_text.html">control_text.html</a></li> 
-         
-        <li><a href="#dom_correct.html">dom_correct.html</a></li> 
-         
-        <li><a href="#dom_event.html">dom_event.html</a></li> 
-         
-        <li><a href="#dom_fault.html">dom_fault.html</a></li> 
-         
-        <li><a href="#dom_process.html">dom_process.html</a></li> 
-         
-        <li><a href="#event_default.html">event_default.html</a></li> 
-         
-        <li><a href="#event_inline.html">event_inline.html</a></li> 
-         
-        <li><a href="#event_inlineWithScript.html">event_inlineWithScript.html</a></li> 
-         
-        <li><a href="#event_object.html">event_object.html</a></li> 
-         
-        <li><a href="#event_tradition.html">event_tradition.html</a></li> 
-         
-        <li><a href="#reference_eventOrigin.html">reference_eventOrigin.html</a></li> 
-         
-        <li><a href="#reference_ieEventObject.html">reference_ieEventObject.html</a></li> 
-         
-        <li><a href="#reference_useOfEventObject.html">reference_useOfEventObject.html</a></li> 
-         
-        <li><a href="#select_all.html">select_all.html</a></li> 
-         
-        <li><a href="#select_id.html">select_id.html</a></li> 
-         
-        <li><a href="#select_query.html">select_query.html</a></li> 
-         
-    </ul> 
-    <hr /> 
-     
-     
-    <div id="control_attribute.html" class="example well"> 
-        <h2 class="title">control_attribute.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_attribute.html">Full Screen</a></h4> 
-        <div> 
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter_9</title>
+    <link rel="stylesheet" href="./public/codemirror.css" />
+    <link rel="stylesheet" href="./public/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .example { margin-top: 10px; }
+        .title { float: left; }
+        .fullscreen { float: right; }
+        
+        textarea {
+            width: 100%;
+            display: block;
+            height: 250px;
+            background: white;
+        }
+        .CodeMirror {
+            font-size: 16px;
+        }
+        .cm-invalidchar {
+            display: none;
+        }
+        iframe {
+            display: block;
+            width: 760px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="./public/codemirror.js"></script>
+    <script src="./public/htmlmixed.js"></script>
+    <script src="./public/javascript.js"></script>
+    <script src="./public/css.js"></script>
+    <script src="./public/xml.js"></script>
+</head>
+<body>
+    <h1>Chapter_9 Example</h1>
+    <ul>
+        
+        <li><a href="#control_attribute.html">control_attribute.html</a></li>
+        
+        <li><a href="#control_body.html">control_body.html</a></li>
+        
+        <li><a href="#control_html.html">control_html.html</a></li>
+        
+        <li><a href="#control_style.html">control_style.html</a></li>
+        
+        <li><a href="#control_text.html">control_text.html</a></li>
+        
+        <li><a href="#dom_correct.html">dom_correct.html</a></li>
+        
+        <li><a href="#dom_event.html">dom_event.html</a></li>
+        
+        <li><a href="#dom_fault.html">dom_fault.html</a></li>
+        
+        <li><a href="#dom_process.html">dom_process.html</a></li>
+        
+        <li><a href="#event_default.html">event_default.html</a></li>
+        
+        <li><a href="#event_inline.html">event_inline.html</a></li>
+        
+        <li><a href="#event_inlineWithScript.html">event_inlineWithScript.html</a></li>
+        
+        <li><a href="#event_object.html">event_object.html</a></li>
+        
+        <li><a href="#event_tradition.html">event_tradition.html</a></li>
+        
+        <li><a href="#reference_eventOrigin.html">reference_eventOrigin.html</a></li>
+        
+        <li><a href="#reference_ieEventObject.html">reference_ieEventObject.html</a></li>
+        
+        <li><a href="#reference_useOfEventObject.html">reference_useOfEventObject.html</a></li>
+        
+        <li><a href="#select_all.html">select_all.html</a></li>
+        
+        <li><a href="#select_id.html">select_id.html</a></li>
+        
+        <li><a href="#select_query.html">select_query.html</a></li>
+        
+    </ul>
+    <hr />
+    
+    
+    <div id="control_attribute.html" class="example well">
+        <h2 class="title">control_attribute.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_attribute.html">Full Screen</a></h4>
+        <div>
             <textarea id="control_attribute">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -111,27 +111,27 @@
     &lt;img id=&quot;image&quot; /&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "control_attribute"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/control_attribute.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="control_body.html" class="example well"> 
-        <h2 class="title">control_body.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_body.html">Run</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "control_attribute";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/control_attribute.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="control_body.html" class="example well">
+        <h2 class="title">control_body.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_body.html">Run</a></h4>
+        <div>
             <textarea id="control_body">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -152,26 +152,26 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "control_body"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-    </div> 
-     
-     
-     
-    <div id="control_html.html" class="example well"> 
-        <h2 class="title">control_html.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_html.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "control_body";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="control_html.html" class="example well">
+        <h2 class="title">control_html.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_html.html">Full Screen</a></h4>
+        <div>
             <textarea id="control_html">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -194,27 +194,27 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "control_html"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/control_html.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="control_style.html" class="example well"> 
-        <h2 class="title">control_style.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_style.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "control_html";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/control_html.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="control_style.html" class="example well">
+        <h2 class="title">control_style.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_style.html">Full Screen</a></h4>
+        <div>
             <textarea id="control_style">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -246,27 +246,27 @@
     
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "control_style"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/control_style.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="control_text.html" class="example well"> 
-        <h2 class="title">control_text.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_text.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "control_style";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/control_style.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="control_text.html" class="example well">
+        <h2 class="title">control_text.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/control_text.html">Full Screen</a></h4>
+        <div>
             <textarea id="control_text">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -289,27 +289,27 @@
     
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "control_text"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/control_text.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="dom_correct.html" class="example well"> 
-        <h2 class="title">dom_correct.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_correct.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "control_text";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/control_text.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="dom_correct.html" class="example well">
+        <h2 class="title">dom_correct.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_correct.html">Full Screen</a></h4>
+        <div>
             <textarea id="dom_correct">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -327,27 +327,27 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "dom_correct"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/dom_correct.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="dom_event.html" class="example well"> 
-        <h2 class="title">dom_event.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_event.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "dom_correct";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/dom_correct.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="dom_event.html" class="example well">
+        <h2 class="title">dom_event.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_event.html">Full Screen</a></h4>
+        <div>
             <textarea id="dom_event">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -358,7 +358,7 @@
             document.querySelector('h1').style.backgroundColor = 'red';
 
             // h2 태그의 글자 색상을 변경합니다.
-            document.querySelector('h2').style.color = red;
+            document.querySelector('h2').style.color = 'red';
         };
     &lt;/script&gt;
 &lt;/head&gt;
@@ -367,27 +367,27 @@
     &lt;h2&gt;Process - 2&lt;/h2&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "dom_event"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/dom_event.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="dom_fault.html" class="example well"> 
-        <h2 class="title">dom_fault.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_fault.html">Run</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "dom_event";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/dom_event.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="dom_fault.html" class="example well">
+        <h2 class="title">dom_fault.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_fault.html">Run</a></h4>
+        <div>
             <textarea id="dom_fault">﻿&lt;!DOCTYPE html&gt;
 &lt;html data-rint=&quot;alert()&quot;&gt;
 &lt;head&gt;
@@ -405,26 +405,26 @@
     &lt;h2&gt;Process - 2&lt;/h2&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "dom_fault"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-    </div> 
-     
-     
-     
-    <div id="dom_process.html" class="example well"> 
-        <h2 class="title">dom_process.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_process.html">Run</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "dom_fault";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="dom_process.html" class="example well">
+        <h2 class="title">dom_process.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/dom_process.html">Run</a></h4>
+        <div>
             <textarea id="dom_process">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -438,26 +438,26 @@
     &lt;script&gt;alert('Process - 3')&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "dom_process"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-    </div> 
-     
-     
-     
-    <div id="event_default.html" class="example well"> 
-        <h2 class="title">event_default.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_default.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "dom_process";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="event_default.html" class="example well">
+        <h2 class="title">event_default.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_default.html">Full Screen</a></h4>
+        <div>
             <textarea id="event_default">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -480,27 +480,27 @@
     &lt;a id=&quot;button&quot; href=&quot;http://hanb.co.kr&quot;&gt;버튼&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "event_default"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/event_default.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="event_inline.html" class="example well"> 
-        <h2 class="title">event_inline.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_inline.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "event_default";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/event_default.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="event_inline.html" class="example well">
+        <h2 class="title">event_inline.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_inline.html">Full Screen</a></h4>
+        <div>
             <textarea id="event_inline">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -510,27 +510,27 @@
     &lt;button onclick=&quot;alert('click')&quot;&gt;버튼&lt;/button&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "event_inline"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/event_inline.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="event_inlineWithScript.html" class="example well"> 
-        <h2 class="title">event_inlineWithScript.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_inlineWithScript.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "event_inline";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/event_inline.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="event_inlineWithScript.html" class="example well">
+        <h2 class="title">event_inlineWithScript.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_inlineWithScript.html">Full Screen</a></h4>
+        <div>
             <textarea id="event_inlineWithScript">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -545,27 +545,27 @@
     &lt;button onclick=&quot;buttonClick()&quot;&gt;버튼&lt;/button&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "event_inlineWithScript"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/event_inlineWithScript.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="event_object.html" class="example well"> 
-        <h2 class="title">event_object.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_object.html">Run</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "event_inlineWithScript";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/event_inlineWithScript.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="event_object.html" class="example well">
+        <h2 class="title">event_object.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_object.html">Run</a></h4>
+        <div>
             <textarea id="event_object">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -580,26 +580,26 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "event_object"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-    </div> 
-     
-     
-     
-    <div id="event_tradition.html" class="example well"> 
-        <h2 class="title">event_tradition.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_tradition.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "event_object";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="event_tradition.html" class="example well">
+        <h2 class="title">event_tradition.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/event_tradition.html">Full Screen</a></h4>
+        <div>
             <textarea id="event_tradition">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -621,27 +621,27 @@
     &lt;button id=&quot;button&quot;&gt;버튼&lt;/button&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "event_tradition"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/event_tradition.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="reference_eventOrigin.html" class="example well"> 
-        <h2 class="title">reference_eventOrigin.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_eventOrigin.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "event_tradition";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/event_tradition.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_eventOrigin.html" class="example well">
+        <h2 class="title">reference_eventOrigin.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_eventOrigin.html">Full Screen</a></h4>
+        <div>
             <textarea id="reference_eventOrigin">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -657,27 +657,27 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "reference_eventOrigin"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/reference_eventOrigin.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="reference_ieEventObject.html" class="example well"> 
-        <h2 class="title">reference_ieEventObject.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_ieEventObject.html">Run</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "reference_eventOrigin";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/reference_eventOrigin.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_ieEventObject.html" class="example well">
+        <h2 class="title">reference_ieEventObject.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_ieEventObject.html">Run</a></h4>
+        <div>
             <textarea id="reference_ieEventObject">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -692,26 +692,26 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "reference_ieEventObject"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-    </div> 
-     
-     
-     
-    <div id="reference_useOfEventObject.html" class="example well"> 
-        <h2 class="title">reference_useOfEventObject.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_useOfEventObject.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "reference_ieEventObject";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="reference_useOfEventObject.html" class="example well">
+        <h2 class="title">reference_useOfEventObject.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/reference_useOfEventObject.html">Full Screen</a></h4>
+        <div>
             <textarea id="reference_useOfEventObject">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -727,27 +727,27 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "reference_useOfEventObject"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/reference_useOfEventObject.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="select_all.html" class="example well"> 
-        <h2 class="title">select_all.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_all.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "reference_useOfEventObject";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/reference_useOfEventObject.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="select_all.html" class="example well">
+        <h2 class="title">select_all.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_all.html">Full Screen</a></h4>
+        <div>
             <textarea id="select_all">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -776,27 +776,27 @@
     &lt;h1&gt;Header&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "select_all"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/select_all.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="select_id.html" class="example well"> 
-        <h2 class="title">select_id.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_id.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "select_all";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/select_all.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="select_id.html" class="example well">
+        <h2 class="title">select_id.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_id.html">Full Screen</a></h4>
+        <div>
             <textarea id="select_id">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -818,27 +818,27 @@
     &lt;h1 id=&quot;header&quot;&gt;Header&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "select_id"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/select_id.html"></iframe> 
-    </div> 
-     
-     
-     
-    <div id="select_query.html" class="example well"> 
-        <h2 class="title">select_query.html</h2> 
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_query.html">Full Screen</a></h4> 
-        <div> 
+</textarea>
+        </div>
+        <script>
+            var id = "select_id";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/select_id.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="select_query.html" class="example well">
+        <h2 class="title">select_query.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_9/select_query.html">Full Screen</a></h4>
+        <div>
             <textarea id="select_query">﻿&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -862,21 +862,21 @@
     &lt;h1&gt;Header&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</textarea> 
-        </div> 
-        <script> 
-            var id = "select_query"; 
-            var item = document.getElementById(id); 
-            item = CodeMirror.fromTextArea(item, { 
-                mode: 'htmlmixed', 
-                lineNumbers: true, 
-                readOnly: true 
-            }); 
-            item.setSize(760, 260); 
-        </script> 
-        <iframe src="./Chapter_9/select_query.html"></iframe> 
-    </div> 
-     
-     
-</body> 
-</html> 
+</textarea>
+        </div>
+        <script>
+            var id = "select_query";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_9/select_query.html"></iframe>
+    </div>
+    
+    
+</body>
+</html>

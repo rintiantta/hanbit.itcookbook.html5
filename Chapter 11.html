@@ -1,0 +1,1137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter_11</title>
+    <link rel="stylesheet" href="./public/codemirror.css" />
+    <link rel="stylesheet" href="./public/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .example { margin-top: 10px; }
+        .title { float: left; }
+        .fullscreen { float: right; }
+        
+        textarea {
+            width: 100%;
+            display: block;
+            height: 250px;
+            background: white;
+        }
+        .CodeMirror {
+            font-size: 16px;
+        }
+        .cm-invalidchar {
+            display: none;
+        }
+        iframe {
+            display: block;
+            width: 760px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="./public/codemirror.js"></script>
+    <script src="./public/htmlmixed.js"></script>
+    <script src="./public/javascript.js"></script>
+    <script src="./public/css.js"></script>
+    <script src="./public/xml.js"></script>
+</head>
+<body>
+    <h1>Chapter_11 Example</h1>
+    <ul>
+        
+        <li><a href="#autofocus.html">autofocus.html</a></li>
+        
+        <li><a href="#frameanimataion.html">frameanimataion.html</a></li>
+        
+        <li><a href="#gallery.html">gallery.html</a></li>
+        
+        <li><a href="#gallery_body.html">gallery_body.html</a></li>
+        
+        <li><a href="#gallery_complete.html">gallery_complete.html</a></li>
+        
+        <li><a href="#gallery_css.html">gallery_css.html</a></li>
+        
+        <li><a href="#gallery_event.html">gallery_event.html</a></li>
+        
+        <li><a href="#gallery_ready.html">gallery_ready.html</a></li>
+        
+        <li><a href="#gallery_style.html">gallery_style.html</a></li>
+        
+        <li><a href="#infinityScroll.html">infinityScroll.html</a></li>
+        
+        <li><a href="#jQuery Masonry.html">jQuery Masonry.html</a></li>
+        
+        <li><a href="#jqueryCreate.html">jqueryCreate.html</a></li>
+        
+        <li><a href="#jqueryCreateAppend_1.html">jqueryCreateAppend_1.html</a></li>
+        
+        <li><a href="#jqueryCreateAppend_2.html">jqueryCreateAppend_2.html</a></li>
+        
+        <li><a href="#lightbox.html">lightbox.html</a></li>
+        
+        <li><a href="#lightbox_ready.html">lightbox_ready.html</a></li>
+        
+        <li><a href="#masonry.html">masonry.html</a></li>
+        
+        <li><a href="#reference_keyCode.html">reference_keyCode.html</a></li>
+        
+    </ul>
+    <hr />
+    
+    
+    <div id="autofocus.html" class="example well">
+        <h2 class="title">autofocus.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/autofocus.html">Full Screen</a></h4>
+        <div>
+            <textarea id="autofocus">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Event&lt;/title&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        window.onload = function () {
+            // 문서 객체를 선택합니다.
+            var input_1 = document.querySelectorAll('input')[0];
+            var input_2 = document.querySelectorAll('input')[1];
+            // input_1
+            input_1.onkeydown = function () {
+                // 글자 개수가 여섯 개 이상일 경우
+                if (6 &lt;= input_1.value.length) {
+                    // input_2 문서 객체로 초점을 이동합니다.
+                    input_2.focus();
+                }
+            };
+            // input_2
+            input_2.onkeydown = function (event) {
+                // 이벤트 객체를 추출합니다.
+                var event = event || window.event;
+                // 사용자의 입력이 '백 스페이스'이고 입력된 글자가 없는 경우
+                if (event.keyCode == 8 &amp;&amp; input_2.value.length == 0) {
+                    input_1.focus();
+                }
+            };
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; maxlength=&quot;6&quot; /&gt;
+    &lt;span&gt;-&lt;/span&gt;
+    &lt;input type=&quot;text&quot; maxlength=&quot;7&quot; /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "autofocus";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/autofocus.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="frameanimataion.html" class="example well">
+        <h2 class="title">frameanimataion.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/frameanimataion.html">Full Screen</a></h4>
+        <div>
+            <textarea id="frameanimataion">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Frame Animation&lt;/title&gt;
+    &lt;script&gt;
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                '0.png', '1.png', '2.png', '3.png', '4.png',
+                '5.png', '6.png', '7.png', '8.png', '9.png',
+                '10.png', '11.png', '12.png', '13.png', '14.png',
+            ];
+            // 타이머 반복을 시작합니다.
+            setInterval(function () {
+                image.src = frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 20);
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img id=&quot;image&quot; /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "frameanimataion";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/frameanimataion.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery.html" class="example well">
+        <h2 class="title">gallery.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+        div.item:nth-child(1) { background: blueviolet; }
+        div.item:nth-child(2) { background: pink; }
+        div.item:nth-child(3) { background-color: burlywood; }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role=&quot;slider&quot;]').attr('data-width');
+            var height = $('[data-role=&quot;slider&quot;]').attr('data-height');
+            var count = $('[data-role=&quot;slider&quot;] div.item').length;
+            
+            // 스타일을 적용합니다.
+            $('[data-role=&quot;slider&quot;]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+            // 변수를 선언합니다.
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role=&quot;slider&quot;] &gt; .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+            // 이벤트를 연결합니다.
+            $('#left-button').click(function () {
+                if (currentPage &gt; 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+            $('#right-button').click(function () {
+                if (currentPage &lt; count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "gallery";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_body.html" class="example well">
+        <h2 class="title">gallery_body.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_body.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_body">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_body";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_body.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_complete.html" class="example well">
+        <h2 class="title">gallery_complete.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_complete.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_complete">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+        div.item:nth-child(1) { background: blueviolet; }
+        div.item:nth-child(2) { background: pink; }
+        div.item:nth-child(3) { background-color: burlywood; }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role=&quot;slider&quot;]').attr('data-width');
+            var height = $('[data-role=&quot;slider&quot;]').attr('data-height');
+            var count = $('[data-role=&quot;slider&quot;] div.item').length;
+
+            // 스타일을 적용합니다.
+            $('[data-role=&quot;slider&quot;]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role=&quot;slider&quot;] &gt; .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+
+            // 이벤트를 연결합니다.
+            $('#left-button').click(function () {
+                if (currentPage &gt; 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+
+            $('#right-button').click(function () {
+                if (currentPage &lt; count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_complete";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_complete.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_css.html" class="example well">
+        <h2 class="title">gallery_css.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_css.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_css">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+        div.item:nth-child(1) { background: blueviolet; }
+        div.item:nth-child(2) { background: pink; }
+        div.item:nth-child(3) { background-color: burlywood; }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role=&quot;slider&quot;]').attr('data-width');
+            var height = $('[data-role=&quot;slider&quot;]').attr('data-height');
+            var count = $('[data-role=&quot;slider&quot;] div.item').length;
+
+            // 스타일을 적용합니다.
+            $('[data-role=&quot;slider&quot;]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_css";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_css.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_event.html" class="example well">
+        <h2 class="title">gallery_event.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_event.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_event">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+        div.item:nth-child(1) { background: blueviolet; }
+        div.item:nth-child(2) { background: pink; }
+        div.item:nth-child(3) { background-color: burlywood; }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role=&quot;slider&quot;]').attr('data-width');
+            var height = $('[data-role=&quot;slider&quot;]').attr('data-height');
+            var count = $('[data-role=&quot;slider&quot;] div.item').length;
+
+            // 스타일을 적용합니다.
+            $('[data-role=&quot;slider&quot;]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role=&quot;slider&quot;] &gt; .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+
+            // 이벤트를 연결합니다.
+            $('#left-button').click(function () { });
+            $('#right-button').click(function () { });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_event";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_event.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_ready.html" class="example well">
+        <h2 class="title">gallery_ready.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_ready.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_ready">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_ready";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_ready.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="gallery_style.html" class="example well">
+        <h2 class="title">gallery_style.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/gallery_style.html">Full Screen</a></h4>
+        <div>
+            <textarea id="gallery_style">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Slider&lt;/title&gt;
+    &lt;style&gt;
+        div.item:nth-child(1) { background: blueviolet; }
+        div.item:nth-child(2) { background: pink; }
+        div.item:nth-child(3) { background-color: burlywood; }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        /* 첫 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+
+        /* 두 번째 ready 이벤트 */
+        $(document).ready(function () {
+
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-role=&quot;slider&quot; data-width=&quot;500&quot; data-height=&quot;300&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Proin in urna turpis.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;h1&gt;Duis malesuada lorem neque.&lt;/h1&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;left-button&quot;&gt;←&lt;/button&gt;
+    &lt;button id=&quot;right-button&quot;&gt;→&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "gallery_style";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/gallery_style.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="infinityScroll.html" class="example well">
+        <h2 class="title">infinityScroll.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/infinityScroll.html">Full Screen</a></h4>
+        <div>
+            <textarea id="infinityScroll">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Infinity Scroll&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt; &lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체 추가 함수
+            var appendDocument = function () {
+                for (var i = 0; i &lt; 20; i++) {
+                    // 문서 객체를 생성합니다.
+                    $('&lt;h1&gt;Infinity Scroll&lt;/h1&gt;').appendTo('body');
+                }
+            };
+            // 초기에 문서 객체를 추가합니다.
+            appendDocument();
+            // 이벤트를 연결합니다.
+            $(window).scroll(function () {
+                // 변수를 선언합니다.
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+                // 검사합니다.
+                if (scrollHeight == documentHeight) {
+                    appendDocument();
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "infinityScroll";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/infinityScroll.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jQuery Masonry.html" class="example well">
+        <h2 class="title">jQuery Masonry.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/jQuery Masonry.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jQuery Masonry">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Masonry&lt;/title&gt;
+    &lt;style&gt;
+        * { margin: 0; padding: 0; }
+        .box { 
+            background: black;
+            margin: 5px;
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;http://masonry.desandro.com/masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체를 생성합니다.
+            for (var i = 0; i &lt; 100; i++) {
+                $('&lt;div&gt;&lt;/div&gt;').addClass('box').css({
+                    width: 100,
+                    height: Math.floor(Math.random() * 100) + 50
+                }).appendTo('body');
+            }
+
+            // Masonry 플러그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jQuery Masonry";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/jQuery Masonry.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqueryCreate.html" class="example well">
+        <h2 class="title">jqueryCreate.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/jqueryCreate.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqueryCreate">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Create&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt; &lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체를 생성합니다.
+            $('&lt;h1&gt;Create Document Object By jQuery&lt;/h1&gt;')
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqueryCreate";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/jqueryCreate.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqueryCreateAppend_1.html" class="example well">
+        <h2 class="title">jqueryCreateAppend_1.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/jqueryCreateAppend_1.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqueryCreateAppend_1">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery DOM&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 10회 반복합니다.
+            for (var i = 0; i &lt; 10; i++) {
+                // 문서 객체를 생성합니다.
+                $('&lt;h1&gt;Create Document Object + ' + i + '&lt;/h1&gt;').css({
+                    backgroundColor: 'black',
+                    color: 'red'  
+                }).appendTo('body');
+            }
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqueryCreateAppend_1";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/jqueryCreateAppend_1.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqueryCreateAppend_2.html" class="example well">
+        <h2 class="title">jqueryCreateAppend_2.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/jqueryCreateAppend_2.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqueryCreateAppend_2">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery DOM&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 10회 반복합니다.
+            for (var i = 0; i &lt; 10; i++) {
+                // 문서 객체를 생성합니다.
+                var $dynamic = $('&lt;h1&gt;Create Document Object + ' + i + '&lt;/h1&gt;').css({
+                        backgroundColor: 'black',
+                        color: 'red'
+                    });
+                
+                // 문서 객체를 추가합니다.
+                $('body').append($dynamic);
+            }
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqueryCreateAppend_2";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/jqueryCreateAppend_2.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="lightbox.html" class="example well">
+        <h2 class="title">lightbox.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/lightbox.html">Full Screen</a></h4>
+        <div>
+            <textarea id="lightbox">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;LightBox&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;jquery.lightbox-0.5.css&quot; / &gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt; &lt;/script&gt;
+    &lt;script src=&quot;jquery.lightbox-0.5.js&quot;&gt; &lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            $('a.light').lightBox();
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a class=&quot;light&quot; href=&quot;image1.jpg&quot;&gt;LightBox&lt;/a&gt;
+    &lt;a class=&quot;light&quot; href=&quot;image2.jpg&quot;&gt;LightBox&lt;/a&gt;
+    &lt;a class=&quot;light&quot; href=&quot;image3.jpg&quot;&gt;LightBox&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "lightbox";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/lightbox.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="lightbox_ready.html" class="example well">
+        <h2 class="title">lightbox_ready.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/lightbox_ready.html">Full Screen</a></h4>
+        <div>
+            <textarea id="lightbox_ready">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;LightBox&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;jquery.lightbox-0.5.css&quot; /&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jquery.lightbox-0.5.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "lightbox_ready";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/lightbox_ready.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="masonry.html" class="example well">
+        <h2 class="title">masonry.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/masonry.html">Full Screen</a></h4>
+        <div>
+            <textarea id="masonry">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Masonry&lt;/title&gt;
+    &lt;style&gt;
+        * { margin: 0; padding: 0; }
+        .box { 
+            background: black;
+            margin: 5px;
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;http://masonry.desandro.com/jquery.masonry.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체를 생성합니다.
+            for (var i = 0; i &lt; 100; i++) {
+                $('&lt;div&gt;&lt;/div&gt;').addClass('box').css({
+                    width: 100,
+                    height: Math.floor(Math.random() * 100) + 50
+                }).appendTo('body');
+            }
+
+            // Masonry 플러그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "masonry";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_11/masonry.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_keyCode.html" class="example well">
+        <h2 class="title">reference_keyCode.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/reference_keyCode.html">Run</a></h4>
+        <div>
+            <textarea id="reference_keyCode">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Event&lt;/title&gt;
+    &lt;script&gt;
+        window.onload = function () {
+            window.onkeydown = function (event) {
+                alert(event.keyCode);
+            };
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_keyCode";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,1228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter_10</title>
+    <link rel="stylesheet" href="./public/codemirror.css" />
+    <link rel="stylesheet" href="./public/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .example { margin-top: 10px; }
+        .title { float: left; }
+        .fullscreen { float: right; }
+        
+        textarea {
+            width: 100%;
+            display: block;
+            height: 250px;
+            background: white;
+        }
+        .CodeMirror {
+            font-size: 16px;
+        }
+        .cm-invalidchar {
+            display: none;
+        }
+        iframe {
+            display: block;
+            width: 760px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="./public/codemirror.js"></script>
+    <script src="./public/htmlmixed.js"></script>
+    <script src="./public/javascript.js"></script>
+    <script src="./public/css.js"></script>
+    <script src="./public/xml.js"></script>
+</head>
+<body>
+    <h1>Chapter_10 Example</h1>
+    <ul>
+        
+        <li><a href="#jqAnimate_animate.html">jqAnimate_animate.html</a></li>
+        
+        <li><a href="#jqAnimate_fade.html">jqAnimate_fade.html</a></li>
+        
+        <li><a href="#jqAnimate_stop.html">jqAnimate_stop.html</a></li>
+        
+        <li><a href="#jqControl_attrGet.html">jqControl_attrGet.html</a></li>
+        
+        <li><a href="#jqControl_attrSetBasic.html">jqControl_attrSetBasic.html</a></li>
+        
+        <li><a href="#jqControl_attrSetFunction.html">jqControl_attrSetFunction.html</a></li>
+        
+        <li><a href="#jqControl_attrSetObject.html">jqControl_attrSetObject.html</a></li>
+        
+        <li><a href="#jqControl_classSet.html">jqControl_classSet.html</a></li>
+        
+        <li><a href="#jqControl_styleSetBasic.html">jqControl_styleSetBasic.html</a></li>
+        
+        <li><a href="#jqControl_styleSetFunction.html">jqControl_styleSetFunction.html</a></li>
+        
+        <li><a href="#jqControl_styleSetObject.html">jqControl_styleSetObject.html</a></li>
+        
+        <li><a href="#jqControl_textHtmlGet.html">jqControl_textHtmlGet.html</a></li>
+        
+        <li><a href="#jqControl_textHtmlSet.html">jqControl_textHtmlSet.html</a></li>
+        
+        <li><a href="#jqEvent_click.html">jqEvent_click.html</a></li>
+        
+        <li><a href="#jqEvent_hover.html">jqEvent_hover.html</a></li>
+        
+        <li><a href="#jqEvent_on.html">jqEvent_on.html</a></li>
+        
+        <li><a href="#jqEvent_preventDefault.html">jqEvent_preventDefault.html</a></li>
+        
+        <li><a href="#jquery_attr.html">jquery_attr.html</a></li>
+        
+        <li><a href="#jquery_basic.html">jquery_basic.html</a></li>
+        
+        <li><a href="#jquery_select.html">jquery_select.html</a></li>
+        
+        <li><a href="#reference_animateWithChain.html">reference_animateWithChain.html</a></li>
+        
+        <li><a href="#reference_animateWithRelative.html">reference_animateWithRelative.html</a></li>
+        
+        <li><a href="#reference_chain.html">reference_chain.html</a></li>
+        
+        <li><a href="#reference_eventWithObject.html">reference_eventWithObject.html</a></li>
+        
+        <li><a href="#reference_validate.html">reference_validate.html</a></li>
+        
+    </ul>
+    <hr />
+    
+    
+    <div id="jqAnimate_animate.html" class="example well">
+        <h2 class="title">jqAnimate_animate.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqAnimate_animate.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqAnimate_animate">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Animate Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 스타일을 변경합니다.
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'red'
+            }).animate({
+                width: 300,
+                opacity: 0.5,
+            }, 500);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqAnimate_animate";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqAnimate_animate.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqAnimate_fade.html" class="example well">
+        <h2 class="title">jqAnimate_fade.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqAnimate_fade.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqAnimate_fade">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('button').click(function () {
+                // 간단한 효과를 적용합니다.
+                $('.page').fadeToggle('slow');
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button&gt;Toggle Show&lt;/button&gt;
+    &lt;div class=&quot;page&quot;&gt;
+        &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor non quam hendrerit adipiscing. Sed tempor, ligula pellentesque sollicitudin iaculis, ligula justo commodo augue, nec pellentesque leo neque non enim. Morbi sodales cursus lacus, tempus ornare enim elementum at. Suspendisse sit amet venenatis metus. Donec bibendum nisl nisl, non sollicitudin lorem blandit vel. Curabitur eu nibh quis massa porttitor tempus. Vestibulum condimentum purus dolor, non aliquam nibh pharetra tincidunt. Nunc eu pharetra odio, eget dictum dolor. Vestibulum sapien ipsum, pharetra nec eleifend nec, consectetur ac lorem.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqAnimate_fade";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqAnimate_fade.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqAnimate_stop.html" class="example well">
+        <h2 class="title">jqAnimate_stop.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqAnimate_stop.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqAnimate_stop">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Animation Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var clearQueue = false;
+            var goToEnd = false;
+            // 이벤트를 연결합니다.
+            $('#clearQueue').change(function () {
+                clearQueue = $(this).prop('checked')
+            });
+            $('#goToEnd').change(function () {
+                goToEnd = $(this).prop('checked');
+            });
+            $('#stopButton').click(function () {
+                $('#box').stop(clearQueue, goToEnd);
+            });
+            // 스타일을 변경합니다.
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'red'
+            })
+            // 타이머를 연결합니다.
+            setInterval(function () {
+                $('#box').animate({
+                    width: 200
+                }, 1000).delay(1000).animate({
+                    width: 100,
+                    height: 100
+                }, 1000);
+            }, 3000);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 입력 양식 --&gt;
+    &lt;label&gt;clearQueue&lt;/label&gt;
+    &lt;input id=&quot;clearQueue&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;br /&gt;
+    &lt;label&gt;goToEnd&lt;/label&gt;
+    &lt;input id=&quot;goToEnd&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;br /&gt;
+    &lt;button id=&quot;stopButton&quot;&gt;Stop&lt;/button&gt;
+    &lt;!-- 애니메이션 --&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqAnimate_stop";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqAnimate_stop.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_attrGet.html" class="example well">
+        <h2 class="title">jqControl_attrGet.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_attrGet.html">Run</a></h4>
+        <div>
+            <textarea id="jqControl_attrGet">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 추출합니다.
+            var src = $('script').attr('src');
+
+            // 출력합니다.
+            alert(src);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_attrGet";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="jqControl_attrSetBasic.html" class="example well">
+        <h2 class="title">jqControl_attrSetBasic.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_attrSetBasic.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_attrSetBasic">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 지정합니다.
+            $('img').attr('alt', 'jQuery 라이브러리를 사용한 속성 지정');
+            $('img').attr('src', 'http://placehold.it/100x100');
+            $('img').attr('width', '100');
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_attrSetBasic";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_attrSetBasic.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_attrSetFunction.html" class="example well">
+        <h2 class="title">jqControl_attrSetFunction.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_attrSetFunction.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_attrSetFunction">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 지정합니다.
+            $('img').attr({
+                alt: 'jQuery 라이브러리를 사용한 속성 지정',
+                src: function (index) {
+                    // 변수를 선언합니다.
+                    var size = (index + 1) * 100;
+
+                    // 반환합니다.
+                    return 'http://placehold.it/' + size + 'x100';
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_attrSetFunction";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_attrSetFunction.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_attrSetObject.html" class="example well">
+        <h2 class="title">jqControl_attrSetObject.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_attrSetObject.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_attrSetObject">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 지정합니다.
+            $('img').attr({
+                alt: 'jQuery 라이브러리를 사용한 속성 지정',
+                src: 'http://placehold.it/100x100',
+                width: 100
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_attrSetObject";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_attrSetObject.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_classSet.html" class="example well">
+        <h2 class="title">jqControl_classSet.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_classSet.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_classSet">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;style&gt;
+        #box {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box.hover {
+            background-color: blue;
+            border-radius: 50px;
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            $('#box').hover(function () {
+                // 스타일을 변경합니다.
+                $('#box').addClass('hover');
+            }, function () {
+                // 스타일을 변경합니다.
+                $('#box').removeClass('hover');
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_classSet";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_classSet.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_styleSetBasic.html" class="example well">
+        <h2 class="title">jqControl_styleSetBasic.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_styleSetBasic.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_styleSetBasic">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 스타일을 적용합니다.
+            $('.box').css('float', 'left');
+            $('.box').css('margin', 10);
+            $('.box').css('width', 100);
+            $('.box').css('height', 100);
+            $('.box').css('backgroundColor', 'red');
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_styleSetBasic";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_styleSetBasic.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_styleSetFunction.html" class="example well">
+        <h2 class="title">jqControl_styleSetFunction.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_styleSetFunction.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_styleSetFunction">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체를 추가합니다.
+            var output = '';
+            for (var i = 0; i &lt; 256; i++) {
+                output += '&lt;div&gt; &lt; /div&gt;';
+            }
+            document.body.innerHTML = output;
+
+            // 스타일을 적용합니다.
+            $('div').css({
+                height: 2,
+                backgroundColor: function (i) {
+                    return 'rgb(' + i + ',' + i + ',' + i + ')';
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_styleSetFunction";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_styleSetFunction.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_styleSetObject.html" class="example well">
+        <h2 class="title">jqControl_styleSetObject.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_styleSetObject.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_styleSetObject">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 스타일을 적용합니다.
+            $('.box').css({
+                float: 'left',
+                margin: 10,
+                width: 100,
+                height: 100,
+                backgroundColor: 'red'
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_styleSetObject";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_styleSetObject.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqControl_textHtmlGet.html" class="example well">
+        <h2 class="title">jqControl_textHtmlGet.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_textHtmlGet.html">Run</a></h4>
+        <div>
+            <textarea id="jqControl_textHtmlGet">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var text = $('h1').text();
+            var html = $('h1').html();
+
+            // 출력합니다.
+            alert(&quot;text: &quot; + text);
+            alert(&quot;html: &quot; + html);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Header - 0&lt;/h1&gt;
+    &lt;h1&gt;Header - 1&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_textHtmlGet";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="jqControl_textHtmlSet.html" class="example well">
+        <h2 class="title">jqControl_textHtmlSet.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqControl_textHtmlSet.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqControl_textHtmlSet">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 내부 글자를 변경합니다.
+            $('h1:nth-child(1)').text('&lt;a href=&quot;#&quot;&gt;text()&lt;/a&gt;');
+            $('h1:nth-child(2)').html('&lt;a href=&quot;#&quot;&gt;html()&lt;/a&gt;');
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Header - 0&lt;/h1&gt;
+    &lt;h1&gt;Header - 1&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqControl_textHtmlSet";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqControl_textHtmlSet.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqEvent_click.html" class="example well">
+        <h2 class="title">jqEvent_click.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqEvent_click.html">Run</a></h4>
+        <div>
+            <textarea id="jqEvent_click">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').click(function () {
+                alert('클릭!');
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Click&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqEvent_click";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="jqEvent_hover.html" class="example well">
+        <h2 class="title">jqEvent_hover.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqEvent_hover.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqEvent_hover">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').hover(function () {
+                // 색상을 변경합니다.
+                $(this).css({
+                    background: 'red',
+                    color: 'white'
+                });
+            }, function () {
+                // 색상을 제거합니다.
+                $(this).css({
+                    background: '',
+                    color: ''
+                });
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Click&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqEvent_hover";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqEvent_hover.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqEvent_on.html" class="example well">
+        <h2 class="title">jqEvent_on.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqEvent_on.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jqEvent_on">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 스타일 변경 및 이벤트를 연결
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            }).on('click', function () {
+                $(this).css('background', 'red');
+            }).on('mouseenter', function () {
+                $(this).css('background', 'blue');
+            }).on('mouseleave', function () {
+                $(this).css('background', 'orange');
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqEvent_on";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jqEvent_on.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jqEvent_preventDefault.html" class="example well">
+        <h2 class="title">jqEvent_preventDefault.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jqEvent_preventDefault.html">Run</a></h4>
+        <div>
+            <textarea id="jqEvent_preventDefault">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('a').click(function (event) {
+                // 출력합니다.
+                alert('click');
+
+                // 기본 이벤트를 제거합니다.
+                event.preventDefault();
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href=&quot;http://hanb.co.kr&quot;&gt;Hanbit Media&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jqEvent_preventDefault";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="jquery_attr.html" class="example well">
+        <h2 class="title">jquery_attr.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jquery_attr.html">Run</a></h4>
+        <div>
+            <textarea id="jquery_attr">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 추출합니다.
+            var src = $('script').attr('src');
+
+            // 출력합니다.
+            alert(src);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "jquery_attr";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+    
+    <div id="jquery_basic.html" class="example well">
+        <h2 class="title">jquery_basic.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jquery_basic.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jquery_basic">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jquery_basic";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jquery_basic.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="jquery_select.html" class="example well">
+        <h2 class="title">jquery_select.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/jquery_select.html">Full Screen</a></h4>
+        <div>
+            <textarea id="jquery_select">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 스타일 속성을 변경합니다.
+            $('h1').css('color', 'red');
+            $('h1').css('background', 'black');
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Header&lt;/h1&gt;
+    &lt;h1&gt;Header&lt;/h1&gt;
+    &lt;h1&gt;Header&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "jquery_select";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/jquery_select.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_animateWithChain.html" class="example well">
+        <h2 class="title">reference_animateWithChain.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/reference_animateWithChain.html">Full Screen</a></h4>
+        <div>
+            <textarea id="reference_animateWithChain">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Animate Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 스타일을 변경합니다.
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'red',
+                position: 'absolute',
+                left: 10,
+                top: 10
+            }).animate({
+                width: 300,
+                opacity: 0.5
+            }, 500).animate({
+                opacity: 1,
+                left: 100,
+                top: 200
+            }, 500);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_animateWithChain";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/reference_animateWithChain.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_animateWithRelative.html" class="example well">
+        <h2 class="title">reference_animateWithRelative.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/reference_animateWithRelative.html">Full Screen</a></h4>
+        <div>
+            <textarea id="reference_animateWithRelative">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Animate Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            // 스타일을 변경합니다.
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'red',
+                position: 'absolute',
+                left: 10,
+                top: 10
+            }).animate({
+                height: '+=300',
+                width: '-=50',
+                left: '+=300',
+                opacity: 0.5
+            }, 500);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_animateWithRelative";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/reference_animateWithRelative.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_chain.html" class="example well">
+        <h2 class="title">reference_chain.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/reference_chain.html">Full Screen</a></h4>
+        <div>
+            <textarea id="reference_chain">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 속성을 지정합니다.
+            $('img').attr('alt', 'jQuery 라이브러리를 사용한 속성 지정').attr('src', 'http://placehold.it/100x100').attr('width', '100');
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+    &lt;img /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_chain";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/reference_chain.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_eventWithObject.html" class="example well">
+        <h2 class="title">reference_eventWithObject.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/reference_eventWithObject.html">Full Screen</a></h4>
+        <div>
+            <textarea id="reference_eventWithObject">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 스타일 변경 및 이벤트를 연결
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            }).on({
+                click: function () {
+                    $(this).css('background', 'red');
+                },
+                mouseenter: function () {
+                    $(this).css('background', 'blue');
+                },
+                mouseleave: function () {
+                    $(this).css('background', 'orange');
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_eventWithObject";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_10/reference_eventWithObject.html"></iframe>
+    </div>
+    
+    
+    
+    <div id="reference_validate.html" class="example well">
+        <h2 class="title">reference_validate.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_10/reference_validate.html">Run</a></h4>
+        <div>
+            <textarea id="reference_validate">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jQuery Basic&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('form').submit(function (event) {
+                // input 태그의 값을 추출합니다.
+                var value = $('input').val();
+                // 유효성을 검사합니다.
+                if (value.replace(/[가-힣]/g, '').length == 0) {
+                    // 유효성 검사 통과
+                    alert('과정을 진행합니다.');
+                } else {
+                    // 유효성 검사 실패
+                    alert('한글 이름을 입력해주세요.');
+                    event.preventDefault();
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;label&gt;이름&lt;/label&gt;
+        &lt;input type=&quot;text&quot; / &gt;
+        &lt;input type=&quot;submit&quot; / &gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+        </div>
+        <script>
+            var id = "reference_validate";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+    </div>
+    
+    
+</body>
+</html>

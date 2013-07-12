@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter_12</title>
+    <link rel="stylesheet" href="./public/codemirror.css" />
+    <link rel="stylesheet" href="./public/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .example { margin-top: 10px; }
+        .title { float: left; }
+        .fullscreen { float: right; }
+        
+        textarea {
+            width: 100%;
+            display: block;
+            height: 250px;
+            background: white;
+        }
+        .CodeMirror {
+            font-size: 16px;
+        }
+        .cm-invalidchar {
+            display: none;
+        }
+        iframe {
+            display: block;
+            width: 760px;
+            height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="./public/codemirror.js"></script>
+    <script src="./public/htmlmixed.js"></script>
+    <script src="./public/javascript.js"></script>
+    <script src="./public/css.js"></script>
+    <script src="./public/xml.js"></script>
+</head>
+<body>
+    <h1>Chapter_12 Example</h1>
+    <ul>
+        
+        <li><a href="#responsive_mediaQuery.html">responsive_mediaQuery.html</a></li>
+        
+    </ul>
+    <hr />
+    
+    
+    <div id="responsive_mediaQuery.html" class="example well">
+        <h2 class="title">responsive_mediaQuery.html</h2>
+        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_12/responsive_mediaQuery.html">Full Screen</a></h4>
+        <div>
+            <textarea id="responsive_mediaQuery">﻿&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Responsive Web Basic&lt;/title&gt;
+    &lt;style&gt;
+        @media (max-width: 499px) {
+            body { background: red; }
+        }
+
+        @media (min-width: 500px) and (max-width: 799px) {
+            body { background: green; }
+        }
+
+        @media (min-width: 800px) {
+            body { background: blue; }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+        </div>
+        <script>
+            var id = "responsive_mediaQuery";
+            var item = document.getElementById(id);
+            item = CodeMirror.fromTextArea(item, {
+                mode: 'htmlmixed',
+                lineNumbers: true,
+                readOnly: true
+            });
+            item.setSize(760, 260);
+        </script>
+        <iframe src="./Chapter_12/responsive_mediaQuery.html"></iframe>
+    </div>
+    
+    
+</body>
+</html>
