@@ -1041,64 +1041,6 @@
         <iframe src="./Chapter_11/lightbox_ready.html"></iframe>
     </div>
     
-    
-    
-    <div id="masonry.html" class="example well">
-        <h2 class="title">masonry.html</h2>
-        <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/masonry.html">Full Screen</a></h4>
-        <div>
-            <textarea id="masonry">﻿&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Masonry&lt;/title&gt;
-    &lt;style&gt;
-        * { margin: 0; padding: 0; }
-        .box { 
-            background: black;
-            margin: 5px;
-        }
-    &lt;/style&gt;
-    &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;http://masonry.desandro.com/jquery.masonry.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        // 이벤트를 연결합니다.
-        $(document).ready(function () {
-            // 문서 객체를 생성합니다.
-            for (var i = 0; i &lt; 100; i++) {
-                $('&lt;div&gt;&lt;/div&gt;').addClass('box').css({
-                    width: 100,
-                    height: Math.floor(Math.random() * 100) + 50
-                }).appendTo('body');
-            }
-
-            // Masonry 플러그인을 적용합니다.
-            $('body').masonry({
-                columnWidth: 110
-            });
-        });
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</textarea>
-        </div>
-        <script>
-            var id = "masonry";
-            var item = document.getElementById(id);
-            item = CodeMirror.fromTextArea(item, {
-                mode: 'htmlmixed',
-                lineNumbers: true,
-                readOnly: true
-            });
-            item.setSize(760, 260);
-        </script>
-        <iframe src="./Chapter_11/masonry.html"></iframe>
-    </div>
-    
-    
-    
     <div id="reference_keyCode.html" class="example well">
         <h2 class="title">reference_keyCode.html</h2>
         <h4 class="fullscreen"><a class="btn btn-primary" href="./Chapter_11/reference_keyCode.html">Run</a></h4>
